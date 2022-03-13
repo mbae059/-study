@@ -6,6 +6,7 @@ using namespace std;
 typedef pair<int, int> pii;
 typedef long long ll;
 int T, N, K, M;
+//ifstream in("temp.txt");
 //ofstream out("temp.txt");
 
 void Input() {
