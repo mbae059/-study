@@ -10,7 +10,7 @@ int T, N, K, M;
 //ofstream out("temp.txt");
 
 bool dfs(string s, const string& t) {
-	if (s == t) {
+	if (s == t){
 		return true;
 	}
 
