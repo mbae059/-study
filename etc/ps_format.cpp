@@ -9,9 +9,12 @@ int T, N, K, M;
 //ofstream out("temp.txt");
 
 void Input() {
+	cin >> N;
 }
 
 void Solution() {
+	if (N >= 5) cout << pow(2, N) - 1;
+
 }
 
 void Solve() {
