@@ -23,7 +23,7 @@ bool flag = false;
 vector<int> answer;
 void Evaluate(const vector<int> fishbread, int TIME) {
 	for (int i = 0; i < N; i++) {
-		if (fishbread.at(i) != i+1) {
+		if (fishbread.at(i) != i + 1) {
 			flag = false;
 			return;
 		}
@@ -37,7 +37,7 @@ void fishbreadReverse(int frontMid, int backMid, vector<int>& fishbread) {
 	for (int i = frontMid; i <= backMid; i++) {
 		fishbread.at(i) *= -1;
 	}
-	reverse(fishbread.begin() + frontMid, fishbread.begin() + backMid+1);
+	reverse(fishbread.begin() + frontMid, fishbread.begin() + backMid + 1);
 }
 
 void Solve(int b, int e, vector<int> fishbread, int TIME) {
@@ -51,7 +51,7 @@ void Solve(int b, int e, vector<int> fishbread, int TIME) {
 	}
 
 	int half = (b + e) / 2;
-	
+
 
 	Solve(b, half, fishbread, TIME);
 	Solve(half + 1, e, fishbread, TIME);
@@ -62,7 +62,7 @@ void Solve(int b, int e, vector<int> fishbread, int TIME) {
 	int backMid = half + 1;
 
 
-	for (int i = frontMid; i >=b ; i--) {
+	for (int i = frontMid; i >= b; i--) {
 		for (int j = backMid; j <= e; j++) {
 			fishbreadReverse(i, j, fishbread);
 			Evaluate(fishbread, TIME);
@@ -90,7 +90,7 @@ int main() {
 		}
 
 		Solve(0, N - 1, fishbread, 1);
-		
+
 		if (flag == false) answer.push_back(3);
 	}
 
