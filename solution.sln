@@ -9,6 +9,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "etc", "etc\etc.vcxproj", "{B6B7133E-178D-441E-BB68-EC9CDED6D716}"
 EndProject
+<<<<<<< Updated upstream
+=======
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fishbread", "fishbread\fishbread.vcxproj", "{B009B08A-3FE1-43B8-9FCE-A821D6E4E9F4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "baekjoon_2961", "baekjoon_2961\baekjoon_2961.vcxproj", "{E2D3A19E-6B7D-4E51-911D-1FD3EB18F87C}"
+EndProject
+>>>>>>> Stashed changes
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +48,25 @@ Global
 		{B6B7133E-178D-441E-BB68-EC9CDED6D716}.Release|x64.Build.0 = Release|x64
 		{B6B7133E-178D-441E-BB68-EC9CDED6D716}.Release|x86.ActiveCfg = Release|Win32
 		{B6B7133E-178D-441E-BB68-EC9CDED6D716}.Release|x86.Build.0 = Release|Win32
+<<<<<<< Updated upstream
+=======
+		{B009B08A-3FE1-43B8-9FCE-A821D6E4E9F4}.Debug|x64.ActiveCfg = Debug|x64
+		{B009B08A-3FE1-43B8-9FCE-A821D6E4E9F4}.Debug|x64.Build.0 = Debug|x64
+		{B009B08A-3FE1-43B8-9FCE-A821D6E4E9F4}.Debug|x86.ActiveCfg = Debug|Win32
+		{B009B08A-3FE1-43B8-9FCE-A821D6E4E9F4}.Debug|x86.Build.0 = Debug|Win32
+		{B009B08A-3FE1-43B8-9FCE-A821D6E4E9F4}.Release|x64.ActiveCfg = Release|x64
+		{B009B08A-3FE1-43B8-9FCE-A821D6E4E9F4}.Release|x64.Build.0 = Release|x64
+		{B009B08A-3FE1-43B8-9FCE-A821D6E4E9F4}.Release|x86.ActiveCfg = Release|Win32
+		{B009B08A-3FE1-43B8-9FCE-A821D6E4E9F4}.Release|x86.Build.0 = Release|Win32
+		{E2D3A19E-6B7D-4E51-911D-1FD3EB18F87C}.Debug|x64.ActiveCfg = Debug|x64
+		{E2D3A19E-6B7D-4E51-911D-1FD3EB18F87C}.Debug|x64.Build.0 = Debug|x64
+		{E2D3A19E-6B7D-4E51-911D-1FD3EB18F87C}.Debug|x86.ActiveCfg = Debug|Win32
+		{E2D3A19E-6B7D-4E51-911D-1FD3EB18F87C}.Debug|x86.Build.0 = Debug|Win32
+		{E2D3A19E-6B7D-4E51-911D-1FD3EB18F87C}.Release|x64.ActiveCfg = Release|x64
+		{E2D3A19E-6B7D-4E51-911D-1FD3EB18F87C}.Release|x64.Build.0 = Release|x64
+		{E2D3A19E-6B7D-4E51-911D-1FD3EB18F87C}.Release|x86.ActiveCfg = Release|Win32
+		{E2D3A19E-6B7D-4E51-911D-1FD3EB18F87C}.Release|x86.Build.0 = Release|Win32
+>>>>>>> Stashed changes
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
