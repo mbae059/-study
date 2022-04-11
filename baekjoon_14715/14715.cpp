@@ -7,14 +7,37 @@ typedef pair<int, int> pii;
 typedef long long ll;
 int T, N, K, M;
 //ofstream out("temp.txt");
-\
+
+void Input() {
+	cin >> N;
+}
+
+
+void Solution() {
+	int cnt = 0;
+
+	int limit = N;
+	for (int i = 2; i < limit;) {
+		if (N % i == 0) {
+			cnt++;
+			N /= i;
+		}
+		else i++;
+	}
+
+	if (cnt == 0) cout << 0;
+	else cout << ceil(log2(cnt));
+}
+
+void Solve() {
+	Input();
+	Solution();
+}
+
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	vector<int> a{ 2,432,4,234,1,34,1 };
-	a.clear();
-	a.push_back(3);
-	cout << a.size();
+	Solve();
 }
