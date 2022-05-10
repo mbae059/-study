@@ -8,19 +8,15 @@ typedef long long ll;
 int T, N, K, M;
 //ofstream out("temp.txt");
 
-int dp[16];
-
 void Input() {
-	cin >> N;
 }
 
 
 void Solution() {
-	dp[1] = 2;
-	for (int i = 2; i <= N; i++) {
-		dp[i] = 2 * (dp[i - 1] + 1);
-	}
-	cout << dp[N];
+	vector<int> v1{ 124,234,43,5235 };
+	vector<int> v2{ 124,234,43 };
+
+	cout << (v1 < v2);
 }
 
 void Solve() {

@@ -8,19 +8,37 @@ typedef long long ll;
 int T, N, K, M;
 //ofstream out("temp.txt");
 
-int dp[16];
+queue<int> q1;
+queue<int> q2;
+int score = 0;
 
 void Input() {
 	cin >> N;
+	for (int i = 0; i < N; i++) {
+		int temp;
+		cin >> temp;
+		q1.push(temp);
+	}
+	
+	for (int i = 0; i < N; i++) {
+		int temp;
+		cin >> temp;
+		q2.push(temp);
+	}
+
 }
 
 
 void Solution() {
-	dp[1] = 2;
-	for (int i = 2; i <= N; i++) {
-		dp[i] = 2 * (dp[i - 1] + 1);
+	while (q1.empty() == 0 && q2.empty() == 0) {
+		int left = q1.front();
+		int right = q2.front();
+
+
 	}
-	cout << dp[N];
+
+	cout << score;
+			
 }
 
 void Solve() {

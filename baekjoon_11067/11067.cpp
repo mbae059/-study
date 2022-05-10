@@ -10,15 +10,28 @@ int T, N, K, M;
 
 vector<pii> cafe;
 vector<int> numbering;
+int endAx;
+vector<int> organized[100003];
+map<int, pii> answer;
+int cnt;
+
 void Input() {
+	answer.clear();
+	endAx = 0;
 	cafe.clear();
 	numbering.clear();
+	cnt = 1;
+	for (int i = 0; i < 100003; i++) {
+		organized[i].clear();
+	}
+
 
 	cin >> N;
 	for (int i = 0; i < N; i++) {
 		int x, y;
 		cin >> x >> y;
 		cafe.push_back({ x,y });
+		endAx = max(endAx, x);
 	}
 	
 	cin >> M;
@@ -27,53 +40,58 @@ void Input() {
 		cin >> temp;
 		numbering.push_back(temp);
 	}
+}
 
+void PreProcessing() {
 	sort(cafe.begin(), cafe.end());
-
-	for (auto i : cafe) {
-		cout << i.first << " " << i.second << endl;
-	}
-
 }
 
 void Solution() {
-	int fIdx = 0, idx = 0;
 
-	while (idx < cafe.size()) {
-		while (cafe[idx].first == cafe[fIdx].first) {
-			idx++;
-			if (idx >= cafe.size()) break; //범위를 넘어선 경우
-		}
+	organized[0].push_back(cafe.front().second);
 
-		if (idx >= cafe.size()) {
-			if ((cafe[fIdx].first == cafe.back().first) && (cafe[fIdx-1].second!=cafe[fIdx].second)) {
-				reverse(cafe.begin() + fIdx, cafe.end());
-			}
-			break;
-		}
+	for (int i = 1; i < N; i++) {
+		int ax = cafe.at(i).first;
+		int ay = cafe.at(i).second;
 
-		if ((cafe[fIdx].second == cafe[idx].second)) {
-			reverse(cafe.begin() + fIdx, cafe.begin() + idx);
-		}
-
-		fIdx = idx;
-	
-	}
-	cout << endl << endl;
-	for (auto i : cafe) {
-		cout << i.first << " " << i.second << endl;
+		organized[ax].push_back(ay);
 	}
 
-	cout << endl << endl;
-
-	for (auto location : numbering) {
-		cout << cafe.at(location - 1).first << " " << cafe.at(location - 1).second << endl;
-
+	if (organized[0].front() != 0) {
+		reverse(organized[0].begin(), organized[0].end());
 	}
+
+	for (auto i : organized[0]) {
+		answer[cnt] = make_pair(0, i);
+		cnt++;
+	}
+
+	int last = 0;
+	for (int i = 1; i <= endAx; i++) {
+		if (organized[i].empty()) continue;
+
+		if (organized[i].front() != organized[last].back()) {
+			reverse(organized[i].begin(), organized[i].end());
+		}
+
+		last = i;
+
+
+		for (auto location : organized[i]) {
+			answer[cnt] = make_pair(i, location);
+			cnt++;
+		}
+	}
+
+	for (auto i : numbering) {
+		cout << answer[i].first << " " << answer[i].second << endl;
+	}
+
 }
 
 void Solve() {
 	Input();
+	PreProcessing();
 	Solution();
 }
 

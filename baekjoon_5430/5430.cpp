@@ -8,19 +8,39 @@ typedef long long ll;
 int T, N, K, M;
 //ofstream out("temp.txt");
 
-int dp[16];
+deque<int> v;
+string commands;
 
 void Input() {
+	v.clear();
+
+	cin >> commands;
 	cin >> N;
+	
+	string str;
+	cin >> str;
+
+	int temp = 0;
+	for (auto i : str) {
+		if (i == '[' ) continue;
+
+		if (i == ',' || i==']') {
+			v.push_back(temp);
+			temp = 0;
+			continue;
+		}
+		temp *= 10;
+		temp += (i-'0');
+	}
+
+	if (v.size() == 1 && v[0] == 0) v.clear();
+
+
 }
 
 
 void Solution() {
-	dp[1] = 2;
-	for (int i = 2; i <= N; i++) {
-		dp[i] = 2 * (dp[i - 1] + 1);
-	}
-	cout << dp[N];
+
 }
 
 void Solve() {
@@ -33,5 +53,9 @@ int main() {
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	Solve();
+	cin >> T;
+
+	while (T--) {
+		Solve();
+	}
 }

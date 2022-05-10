@@ -8,19 +8,33 @@ typedef long long ll;
 int T, N, K, M;
 //ofstream out("temp.txt");
 
-int dp[16];
+int line[201];
+int dp[201];
 
 void Input() {
 	cin >> N;
+
+	for (int i = 0; i < N; i++) {
+		cin >> line[i];
+	}
+
+
 }
 
 
 void Solution() {
-	dp[1] = 2;
-	for (int i = 2; i <= N; i++) {
-		dp[i] = 2 * (dp[i - 1] + 1);
+	int M = 0;
+
+	for (int i = 0; i < N; i++) {
+		dp[i] = 1;
+		for (int j = 0; j < i; j++) {
+			if (line[j] < line[i]) dp[i] = max(dp[i], dp[j] + 1);
+		}
+
+		M = max(M, dp[i]);
 	}
-	cout << dp[N];
+
+	cout << N - M;
 }
 
 void Solve() {

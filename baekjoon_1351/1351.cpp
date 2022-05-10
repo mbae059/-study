@@ -5,22 +5,29 @@
 using namespace std;
 typedef pair<int, int> pii;
 typedef long long ll;
-int T, N, K, M;
+ll T, N, K, M, P, Q;
 //ofstream out("temp.txt");
 
-int dp[16];
+map<ll, ll> dp;
 
 void Input() {
-	cin >> N;
+	cin >> N >> P >> Q;
 }
 
 
-void Solution() {
-	dp[1] = 2;
-	for (int i = 2; i <= N; i++) {
-		dp[i] = 2 * (dp[i - 1] + 1);
+ll dfs(ll n) {
+	try {
+		return dp.at(n);
 	}
-	cout << dp[N];
+	catch (const std::out_of_range& e) {
+		dp[n] = dfs(n / P) + dfs(n / Q);
+		return dp.at(n);
+	}
+}
+
+void Solution() {
+	dp[0] = 1;
+	cout << dfs(N) << endl;
 }
 
 void Solve() {
